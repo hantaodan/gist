@@ -4,3 +4,7 @@ Android 通过samples\android-x\BluetoothChat学习蓝牙操作
 Android蓝牙操作
   http://zhouyunan2010.iteye.com/blog/1186021
   http://blog.csdn.net/bailyzheng/article/details/10308577
+...
+# 一共有三个线程：一个监听，一个管连接，一个管传输数据
+# 线程中断， interrupt方法，线程执行完了，会返回。中断了以后，也会返回，就会回收。
+# volatile 在多线程和并发的时候，保证值永远是最新的。
