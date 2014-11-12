@@ -1,0 +1,17 @@
+# 01.不要在常量和变量中出现容易混淆的字母
+--- |
+  long i = 1l;
+  字母l和o尽量不要和数字混用，以免让人产生误差。
+  l作为长整型标志时，务必大写。
+  long i = 1L;
+...
+# 02.莫要常量变成变量
+--- |
+  务必使常量的值在运行期间保持不变。
+  interface Constant{
+    public static final int RAND_CONST = new Random().nextInt();
+  }
+  没有人知道这个RAND_CONST是什么。
+  常量必须是常量，编译时期必须确定。
+  final不要随意的改变值。
+...
