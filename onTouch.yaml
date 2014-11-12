@@ -1,0 +1,25 @@
+# android的touch事件
+# 和事件分发相关的三个方法
+--- |
+public boolean dispatchTouchEvent(MotionEvent ev)      # 用于事件的分发
+public boolean onInterceptTouchEvent(MotionEvent ev)    # 用于事件的拦截
+public boolean onTouchEvent(MotionEvent ev)     # 处理事件
+reference: 
+  http://blog.csdn.net/guolin_blog/article/details/9097463
+  http://blog.csdn.net/guolin_blog/article/details/9153747
+...
+
+# 构造MotionEvent 触摸时间的(x,y)坐标得到的是double类型
+---
+obtain():构造的事件，坐标为降低为float类型。
+...
+
+# 模拟鼠标事件
+--- |
+Instrumentation # 发送键盘鼠标事件
+  sendCharacterSync(int keyCode) # 用于发送指定KeyCode的按键
+  sendKeyDownUpSync(int key) # 用于发送指定KeyCode的按键
+  sendPointerSync(MotionEvent event) # 用于模拟Touch事件
+  sendStringSync(String text) # 用于发送字符串
+  其中，sendPointerSync()会将坐标变为整形，丢失精度。至少4.2系统上面测试是这样的。
+...
