@@ -25,5 +25,20 @@
   s.equals(s1); 
 ...
 
+# 06 覆写变长方法也要要循规蹈矩
+--- |
+  // 基类
+  class Base{
+    void fun(int price,int... discounts){
+    }
+  }
+  // 子类，覆盖父类方法
+  class Sub extends Base{
+  void fun(int price,int[] discounts){
+    }
+  }
+  显示形式要一致
+...
+
   
 
