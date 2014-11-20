@@ -61,6 +61,13 @@
   \b 单词的边界
   \w 字符或数字
 ...
+
+# 80.多线程使用Vector或HashTable
+---
+  Vector是ArrayList的多线程版本，HashTable是HashMap的多线程版本
+...
+
+
   
     
   
