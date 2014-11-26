@@ -23,3 +23,10 @@ Instrumentation # 发送键盘鼠标事件
   sendStringSync(String text) # 用于发送字符串
   其中，sendPointerSync()会将坐标变为整形，丢失精度。至少4.2系统上面测试是这样的。
 ...
+
+# 对话框
+---
+popupwindow:
+dialog:
+windowmanager: # 可以传递touch事件，必须设置参数
+...
