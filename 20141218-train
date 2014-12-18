@@ -1,0 +1,18 @@
+1.提交
+2.冲突
+3.code review
+4.maven命令
+
+
+# 查看用户名
+git config user.name
+git config user.email
+
+# 设置用户名
+git config --global user.name "lubin" 
+git config --global user.email lubin.z@gmail.com
+
+# 删除用户名密码
+git config --unset --global user.name
+git config --unset --global user.email
+
