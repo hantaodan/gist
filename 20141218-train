@@ -1,7 +1,33 @@
 1.提交
+git -v
+pwd # 当前路径
+git add .
+git add xxx.
+git status -s
+git log --oneline
+git commit -m 
+git commit --amend 
+git branch -D
+git branch -v
+git checkout -b xxx
+git checkout xxx -- file
+git remote -v
+git reset --soft
+git reset --hard
+git clean -fd
+git merge
+
+
 2.冲突
+git rebase -i 
+git pull --rebase
+
+
 3.code review
+
 4.maven命令
+
+5.idea导入
 
 
 # 查看用户名
