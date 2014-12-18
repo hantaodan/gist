@@ -9,10 +9,26 @@ git config user.name
 git config user.email
 
 # 设置用户名
-git config --global user.name "lubin" 
-git config --global user.email lubin.z@gmail.com
+git config --global user.name "xxx" 
+git config --global user.email xxx@gmail.com
+
+git config --global user.name "danhantao"
+git config --global user.email "danhantao@yeah.net"
+
+git config --global user.name "hantaodan"
+git config --global user.email "studydao@gmail.com"
 
 # 删除用户名密码
 git config --unset --global user.name
 git config --unset --global user.email
 
+--- # git取别名
+alias: |
+  git config --global alias.for "push origin HEAD:refs/for/master"
+  git config --global alias.draft "push origin HEAD:refs/drafts/master"
+  git config --global alias.pom "push origin master"
+...
+
+--- # allow-empty reset-author
+git commit --allow-empty -m "Empty"
+git commit --amend --allow-empty --reset-author
