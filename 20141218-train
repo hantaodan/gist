@@ -16,6 +16,7 @@ git reset --soft
 git reset --hard
 git clean -fd
 git merge
+git stash list
 
 
 2.冲突
