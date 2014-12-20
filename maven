@@ -1,16 +1,45 @@
 1.安装jar包到本地仓库
 mvn install:install-file 
--Dfile={Path/to/your/ojdbc.jar} 
--DgroupId=com.oracle -DartifactId=ojdbc6 
--Dversion=11.2.0 
+-Dfile=xxx.jar # 本地 
+-DgroupId=xxx 
+-DartifactId=xxx
+-Dversion=xxx
 -Dpackaging=jar
 
-2.部署jar包到指定目录
-mvn deploy:deploy-file 
--Durl=file:///Users/dev/workspace/maven/repositories/xx 
--Dversion=1.0.0 
--DgroupId=xx
--DartifactId=xx 
--Dfile=xx.jar
 
-3.安装目录
+2.部署jar包到远程仓库
+mvn deploy:deploy-file 
+-Durl=file:///Users/dev/workspace/maven/repositories/xx  # 远程
+-DgroupId=xxx
+-DartifactId=xxx
+-Dversion=1.0.0
+-Dpackaging=jar
+-Dfile=xxx.jar # 本地
+
+3.打源码包
+(1) 直接到项目下，执行 mvn source:jar，可以在target目录下得到:xxx-sources.jar
+(2) 发布到本地仓库中
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-source-plugin</artifactId>
+      <version>2.1.2</version>
+      <executions>
+        <execution>
+          <id>attach-sources</id>
+          <phase>verify</phase>
+          <goals>
+            <goal>jar-no-fork</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
+</build>
+# verify vt. 核实；查证
+# fork vi. 分叉；分歧
+参考:http://maven.apache.org/plugins/maven-source-plugin/jar-no-fork-mojo.html
+     http://maven.apache.org/plugins/maven-source-plugin/examples/configureplugin.html
+
+
