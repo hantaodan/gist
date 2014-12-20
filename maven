@@ -1,20 +1,38 @@
 1.安装jar包到本地仓库
 mvn install:install-file 
 -Dfile=xxx.jar # 本地 
+-Dsources=xxx-sources.jar # 可选,源码
 -DgroupId=xxx 
 -DartifactId=xxx
 -Dversion=xxx
 -Dpackaging=jar
 
+参考:http://maven.apache.org/plugins/maven-install-plugin/install-file-mojo.html
+
+mvn install:install-file -Dfile=osworkflow-2.8.0.jar -DpomFile=osworkflow-2.8.0.pom -Dsources=osworkflow-2.8.0-sources.jar -DgroupId=opensymphony -DartifactId=osworkflow -Dpackaging=jar -Dversion=2.8.0
+语法：
+mvn install:install-file -Dfile=your-artifact-1.0.jar 
+                        [-DpomFile=your-pom.xml] 
+                        [-Dsources=src.jar] 
+                        [-Djavadoc=apidocs.jar] 
+                        [-DgroupId=org.some.group] 
+                        [-DartifactId=your-artifact] 
+                        [-Dversion=1.0] 
+                        [-Dpackaging=jar] 
+                        [-Dclassifier=sources] 
+                        [-DgeneratePom=true] 
+                        [-DcreateChecksum=true]
+
 
 2.部署jar包到远程仓库
 mvn deploy:deploy-file 
--Durl=file:///Users/dev/workspace/maven/repositories/xx  # 远程
+-Durl=file:///Users/dev/workspace/maven/repositories/xx  # 远程,此file:/// 本地必须为这样格式
 -DgroupId=xxx
 -DartifactId=xxx
 -Dversion=1.0.0
 -Dpackaging=jar
 -Dfile=xxx.jar # 本地
+-Dsources=xxx-sources.jar # 可选,源码
 
 3.打源码包
 (1) 直接到项目下，执行 mvn source:jar，可以在target目录下得到:xxx-sources.jar
